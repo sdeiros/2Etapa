@@ -88,9 +88,9 @@ if (isset($_POST['enviar'])) {
         <h1>Recuperação de Senha</h1>
         <p>Olá, ' . $primeiroNome . ' ' . $sobrenome . '</p>
         <p>Você solicitou a recuperação de sua senha.</p>
-        <p>Sua nova senha é: <strong>' . $_SESSION['senha'] . '</strong></p>
-        <img src="https://lh3.googleusercontent.com/B31UXnW_ay-_FG5N91JXfOLcVDaeBhF5By5fVtzl4nVko8-4hKEMyPTuP37k55SauiB9nCv81Jpzwc9JoCDe-OXCWxALi7iqjVG5kgEbNnldWSkBWuExM471qw-hFaXVSwUBdyGDmo59bH5Ign-DuAIRQoXtbyYRNjAbnSWTbXGnYUNXoCp59fFT3pccc5Lj-uzBnkvH7dtiNXc2EHovymIs5LZ_qfZDZRQhtuUHOPVEa_m6oOerGc4U0r0LR0AIAQB7krnUUzjN-CZd6k0gA76jvB2_FfVz5xIWyveI7wVN2QvJn_EVS4zWHMDvIjuK1JjSxCoIDiZhxCU5XkuCjHQgpRH8LuDEh_57t4PA2WQ9pRb65akSaJfPX8QdK0XeK-q3P7drD2h3D6k0CA2C_5ViEzxpBInoWkq_I2xMxmsEGHQwhmTFfxrWfXjnVRC9QrVs2wi1Qljg-RL3imG0gXg2MAWG_Jdi0SJ1hEIbQFaEH5fvGUqw6MdSbb5HS5TjCuYz7hmYkbnBCNbJBdbmJr6Ib4caXkTqLS5n-Q0ahBAqf7OumKvfLUHqD5zA6LuW2ITS4qUBNQwgP9hHbNNXlmhyBeyGrasGdG2g17ABvvhoPQcqxiwdJnFzo61lhupft6SVTqyUttg5Rwqa9RlVsb4pXPgGDlsutYrUsIfZh2bwHUNagoFRdgnloB2yJ-nK_0S3wuoq6Ohtp6tWmBLqvH7Z9unCFzNL1X56am8IkRzj7eJlG4BRRbQgyGiPDWxStDqogEptB3heeY4BvXuNKnpP-VoJtfYdpTQDQT528O2gGc9xqj9kD59r9dIVktirkVmiaQDLBMq9mbYrZoSV0NAhOWv02pgQu-psdRjIS38pYzxfPIk2ht5PzvPCJbBflCO77k6DnKp1juT5hlAQ1QGLYKzRlY8WlH1CAG5YmlSNkTY=w60-h60-s-no?authuser=0" alt="Logo da Empresa">
-        <p>Por favor, faça o login com essa nova senha e altere-a assim que possível.</p>
+        <p>Sua senha é: <strong>' . $_SESSION['senha'] . '</strong></p>
+
+        <hr>
         <p>Se você não solicitou essa recuperação de senha, ignore este e-mail.</p>
         <p>Atenciosamente,</p>
         <p>A equipe de suporte</p>
@@ -98,15 +98,17 @@ if (isset($_POST['enviar'])) {
 
         $mail->Body = $body; // Mensagem que vai no email
         $result = $mail->Send();
-        echo 'Email enviado com sucesso';
+        header("Location: email.php");
+
+
 
         // FALSE = erro    
-     } catch (Exception $e) {
-            echo "Erro ao enviar o email: {$mail->ErrorInfo}"; //monstra a mensaem e depois o tipo de erro armazenado no servidor
-        }
+    } catch (Exception $e) {
+        echo "Erro ao enviar o email: {$mail->ErrorInfo}"; //monstra a mensaem e depois o tipo de erro armazenado no servidor
+    }
 
     //Tudo que está acima só vai ser enviado se as informações forem executadas via POST
-    } else {
+} else {
     echo "Erro ao enviar email, acesso não foi via Formulário";
     //Caso alguém tente enviar email sem acessar o formulário
 }
