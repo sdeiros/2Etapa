@@ -41,14 +41,10 @@
     <img class="logo" src="./Imagens/Logo.png" alt="logo novas raízes">
 
     <div id="img-main">
-        <a href="https://www.google.com/" target="_blank"><img class="google-icon-main" src="Imagens/Google.png"
-                alt="LoginGoogle" title="Login com Google"></a>
-        <a href="" target="_blank"><img class="facebook-icon-main" src="Imagens/Facebook.png" alt="LoginFacebook"
-                title="Login com Facebook"></a>
-        <a href="" target="_blank"><img class="twitter-icon-main" src="Imagens/Twitter.png" alt="LoginTwitter"
-                title="Login com Twitter"></a>
-        <a href="" target="_blank"><img class="apple-icon-main" src="Imagens/Apple.png" alt="LoginApple"
-                title="Login com iCloud"></a>
+        <a href="https://www.google.com/" target="_blank"><img class="google-icon-main" src="Imagens/Google.png" alt="LoginGoogle" title="Login com Google"></a>
+        <a href="" target="_blank"><img class="facebook-icon-main" src="Imagens/Facebook.png" alt="LoginFacebook" title="Login com Facebook"></a>
+        <a href="" target="_blank"><img class="twitter-icon-main" src="Imagens/Twitter.png" alt="LoginTwitter" title="Login com Twitter"></a>
+        <a href="" target="_blank"><img class="apple-icon-main" src="Imagens/Apple.png" alt="LoginApple" title="Login com iCloud"></a>
     </div>
 
     <?php
@@ -88,6 +84,8 @@
         }
 
         $conn->close();
+        header('Location: login.php');
+        exit;
     }
     ?>
 

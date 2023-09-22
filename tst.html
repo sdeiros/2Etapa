@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tradutor de Texto</title>
+</head>
+
+<body>
+    <h1>Tradutor de Texto</h1>
+
+    <!-- Adicione os elementos select para escolher o idioma de origem e destino -->
+    <select id="idiomaOrigem">
+        <option value="en">Inglês</option>
+        <option value="es">Espanhol</option>
+        <option value="fr">Francês</option>
+        <option value="de">Alemão</option>
+        <option value="pt-br">Português</option>
+        <!-- Adicione mais opções conforme necessário -->
+    </select>
+
+    <input type="text" id="textoParaTraduzir" placeholder="Digite o texto">
+
+    <select id="idiomaDestino">
+        <option value="" default selected>De onde você é?</option>
+        <option value="en">Inglês</option>
+        <option value="es">Espanhol</option>
+        <option value="fr">Francês</option>
+        <option value="de">Alemão</option>
+        <option value="pt-br">Português</option>
+        <!-- Adicione mais opções conforme necessário -->
+    </select>
+
+    <button onclick="traduzir()">Traduzir</button>
+    <p><strong>Texto traduzido:</strong></p>
+    <p id="textoTraduzido"></p>
+    <p id="erro" style="color: red;"></p> <!-- Elemento para exibir mensagens de erro -->
+
+    <script>
+        function traduzir() {
+            const textoParaTraduzir = document.getElementById('textoParaTraduzir').value;
+            const idiomaOrigem = document.getElementById('idiomaOrigem').value;
+            const idiomaDestino = document.getElementById('idiomaDestino').value;
+
+            // Verifique se o campo de texto não está vazio
+            if (textoParaTraduzir.trim() === '') {
+                document.getElementById('erro').textContent = 'Por favor, digite o texto a ser traduzido.';
+                return; // Saia da função se o campo estiver vazio
+            }
+
+            // Limpe mensagens de erro anteriores
+            document.getElementById('erro').textContent = '';
+
+            // Faça uma solicitação à API do Google Translate
+            fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=${idiomaOrigem}&tl=${idiomaDestino}&dt=t&q=${textoParaTraduzir}`)
+                .then(response => response.json())
+                .then(data => {
+                    const textoTraduzido = data[0][0][0];
+                    document.getElementById('textoTraduzido').textContent = textoTraduzido;
+                })
+                .catch(error => {
+                    console.error('Erro ao traduzir:', error);
+                    document.getElementById('textoTraduzido').textContent = 'Erro ao traduzir';
+                });
+        }
+    </script>
+</body>
+
+</html>
