@@ -4,10 +4,10 @@ session_start();
 // Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Configurações do banco de dados
-    $hostname = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "user";
+    $hostname = "db4free.net";
+    $username = "raizes23";
+    $password = "raizes23";
+    $dbname = "novarsraizes";
     $usertable = "cadastros";
 
     // Conexão com o banco de dados

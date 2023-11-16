@@ -1,0 +1,198 @@
+body {
+    position: relative;
+    background: #000000;
+}
+
+.fundo {
+    position: relative;
+    width: 100%;
+
+    background: linear-gradient(180deg, #09150A 67.19%, rgba(0, 0, 0, 0.8) 100%);
+
+}
+
+.linha {
+    position: absolute;
+    width: 154px;
+    height: 14px;
+    top: 22rem;
+    left: 50%;
+
+}
+
+.titulo {
+    position: absolute;
+    width: 240px;
+    height: 4rem;
+    top: 28rem;
+    left: 47%;
+
+    font-family: 'Quando';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 85px;
+    text-align: center;
+
+    color: #FFF0BC;
+
+}
+
+.image {
+    position: absolute;
+    width: 500px;
+    height: 820px;
+    bottom: 6rem;
+    right: 90%;
+}
+
+
+.photo {
+    position: absolute;
+    width: 560px;
+    height: 820px;
+    bottom: 6rem;
+    left:85%;
+}
+
+.image-slideshow {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {display: none;}
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+.cabeçalho {
+    width: 100vw;
+    position: absolute;
+    left: 60.94%;
+    right: 31.35%;
+    top: 4.66%;
+    bottom: 92.66%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+#menu {
+    position: relative;
+    width: 100%;
+    height: 4.5rem;
+    background: #09150A;
+    border-bottom: 1px solid #FFF0BC;
+}
+
+.logo-nav {
+    position: relative;
+    width: 68px;
+    height: 82px;
+    padding: 14px;
+    left: 3.8rem;
+}
+
+#menu ul {
+    max-width: 1920px;
+    height: 70px;
+    list-style: none;
+    padding: 0;
+    bottom: 87.81%;
+}
+
+#menu ul li {
+    display: inline;
+}
+
+.cadastrar {
+    color: #FFFFFF;
+
+    font-family: 'Quando';
+    font-style: normal;
+    font-size: 12px;
+    line-height: 29px;
+
+    position: absolute;
+    right: 4.5rem;
+    top: 1.2rem;
+    padding: 3px 15px;
+    cursor: pointer;
+
+    border: none;
+    border-radius: 15px;
+
+    text-align: center;
+    background: #3A412E;
+    transition: 0.5s all ease-in-out;
+}
+
+.login {
+    color: #FFFFFF;
+
+    position: absolute;
+    right: 13rem;
+    top: 1.2rem;
+    padding: 1px 28px;
+    cursor: pointer;
+
+    border: solid;
+    border-width: 2px;
+    border-radius: 15px;
+    border-color: #3A412E;
+
+    font-family: 'Quando';
+    font-style: normal;
+    font-size: 12px;
+    line-height: 29px;
+
+
+    text-align: center;
+    background-color: transparent;
+}
+
+.sobre {
+    color: #FFFFFF;
+
+    position: absolute;
+    left: 62rem;
+    top: 1.3rem;
+
+    font-family: 'Quando';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 29px;
+
+    text-align: center;
+}
+
+.inform {
+    color: #FFFFFF;
+
+    position: absolute;
+    left: 50rem;
+    top: 1.3rem;
+
+    font-family: 'Quando';
+    font-size: 12px;
+    line-height: 29px;
+
+    text-align: center;
+}

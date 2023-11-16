@@ -51,10 +51,10 @@
     session_start();
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $hostname = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "user";
+        $hostname = "db4free.net";
+        $username = "raizes23";
+        $password = "raizes23";
+        $dbname = "novarsraizes";
         $usertable = "cadastros";
 
         $conn = new mysqli($hostname, $username, $password, $dbname);
